@@ -1,0 +1,308 @@
+:root{--gold:#ffd373;--cream:#fff3d1;--ink:#050711;--glass:rgba(10,12,28,.84)}
+html,body{width:100%;height:100%;min-height:100%;overflow:hidden;background:#090b12!important}body{display:block}
+#shiguang-phone-shell{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden;color:#f9f3e4;background:#03040a;border-radius:0;box-shadow:none;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+#cv{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#identity-experience,#galaxy-view,#light-point-app{position:absolute;inset:0}#galaxy-view{pointer-events:none}#identity-experience{z-index:100;background:radial-gradient(circle at 70% 18%,rgba(67,84,164,.28),transparent 30%),radial-gradient(circle at 15% 82%,rgba(143,90,28,.19),transparent 32%),linear-gradient(155deg,#080b1c,#02030a 68%)}
+.identity-screen{position:absolute;inset:0;width:100%;height:100%;box-sizing:border-box;display:none;overflow-y:auto;padding:54px 28px 30px;background-image:radial-gradient(circle at 20% 15%,#8fa9ff 0 1px,transparent 1.7px),radial-gradient(circle at 78% 62%,#ffd373 0 1px,transparent 1.5px);background-size:83px 107px,127px 143px}.identity-screen.is-active{display:flex;flex-direction:column;animation:screen-in .45s ease both}.identity-kicker,.identity-progress{margin:0;color:#d8b86e;font-size:11px;letter-spacing:.23em}.identity-star{margin:auto 0 20px;font-size:58px;color:var(--gold);text-shadow:0 0 32px #e4a62d}.identity-screen h1{margin:0;font:700 43px/1.18 Georgia,"Songti SC",serif;color:var(--cream);letter-spacing:.03em}.identity-screen h2{margin:52px 0 22px;font:700 31px/1.32 Georgia,"Songti SC",serif;color:var(--cream)}.identity-screen>p:not(.identity-kicker):not(.identity-progress){color:#aeb4ca;line-height:1.8;font-size:14px}.identity-primary,.identity-next{width:100%;min-height:54px;border:1px solid #ffe8ad;border-radius:999px;color:#241707;background:linear-gradient(110deg,#ffe599,#ffc458);box-shadow:0 0 26px rgba(255,194,75,.25);font:700 15px inherit;cursor:pointer}.identity-welcome .identity-primary{margin-top:36px}.identity-options{display:grid;gap:13px}.identity-options button{min-height:100px;padding:17px 18px;border:1px solid rgba(214,220,255,.2);border-radius:18px;color:#edeefa;background:linear-gradient(135deg,rgba(33,39,78,.86),rgba(10,12,30,.86));text-align:left;cursor:pointer}.identity-options b{display:block;margin-bottom:7px;font-size:18px}.identity-options span{color:#949bb3;font-size:12px}.identity-options button.is-selected{border-color:#ffd373;background:linear-gradient(135deg,rgba(96,67,25,.82),rgba(27,22,29,.92));box-shadow:0 0 22px rgba(255,201,88,.14)}.identity-options-five{gap:9px}.identity-options-five button{min-height:69px;padding:11px 15px}.identity-options-five b{font-size:15px;margin-bottom:3px}.identity-next{margin-top:auto}.identity-shake{animation:shake .3s}.identity-name input{width:100%;height:58px;margin:20px 0 8px;padding:0 18px;border:1px solid rgba(255,222,145,.45);border-radius:15px;outline:0;color:white;background:rgba(8,10,25,.78);font:18px inherit;user-select:text}.identity-name form{margin-top:25px}.identity-name .identity-primary{margin-top:18px}#identity-error{min-height:20px;margin:0;color:#ff9f9f;font-size:12px}.identity-generating{align-items:center;justify-content:center;text-align:center}.identity-generating h2{margin:35px 0 8px}.identity-orbit{position:relative;width:130px;height:130px;border:1px solid rgba(255,213,115,.35);border-radius:50%;animation:spin 2.2s linear infinite}.identity-orbit:after{content:"";position:absolute;inset:17px;border:1px solid rgba(128,162,255,.38);border-radius:50%}.identity-orbit i{position:absolute;top:-5px;left:57px;width:12px;height:12px;border-radius:50%;background:#ffe6a5;box-shadow:0 0 20px #ffc548}.identity-orbit span{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold);font-size:35px}.identity-card-screen{padding-top:28px;text-align:center}.identity-card-screen h2{margin:14px 0 14px;font-size:24px}#identity-card-canvas{display:block;width:min(100%,274px);height:auto;max-height:548px;margin:0 auto;border:1px solid rgba(255,217,129,.5);border-radius:18px;box-shadow:0 18px 48px #000}.identity-card-actions{display:grid;gap:8px;margin-top:14px}.identity-secondary{min-height:46px;border:1px solid rgba(255,222,155,.45);border-radius:999px;color:#f6e7c5;background:rgba(16,17,30,.8);font:600 14px inherit}.identity-text{border:0;color:#9fa4b5;background:transparent;text-decoration:underline}
+.identity-welcome{padding:0;background:#030711 url("../images/welcome-identity-exploration-clean.png") center/100% 100% no-repeat!important}.identity-welcome>:not(#identity-start){display:none!important}.identity-welcome #identity-start{position:absolute;left:13%;bottom:5.2%;width:74%;height:10%;min-height:0;margin:0;border:0;border-radius:999px;color:transparent;background:transparent;box-shadow:none}.identity-welcome #identity-start:focus-visible{outline:3px solid #fff1bd;outline-offset:3px}.identity-welcome #identity-start:hover{background:rgba(255,225,150,.05)}
+#identity-question-dna,#identity-question-direction{padding:0;background-color:#030711!important;background-image:url("../images/identity-question-reference-clean.png")!important;background-repeat:no-repeat!important;background-size:300% 100%!important}
+#identity-question-dna{background-position:50% 50%!important}#identity-question-direction{background-position:100% 50%!important}
+#identity-question-dna>.identity-progress,#identity-question-dna>h2,#identity-question-direction>.identity-progress,#identity-question-direction>h2{display:none!important}
+#identity-question-dna .identity-options{position:absolute;top:31.3%;right:4.2%;bottom:17.3%;left:4.2%;display:grid;grid-template-columns:1fr 1fr;gap:3%;margin:0}
+#identity-question-direction .identity-options{position:absolute;top:29.5%;right:4.5%;bottom:10.5%;left:4.5%;display:grid;grid-template-rows:repeat(5,1fr);gap:1.3%;margin:0}
+#identity-question-dna .identity-options button,#identity-question-direction .identity-options button{width:100%;height:100%;min-height:0;padding:0;border:0;border-radius:18px;color:transparent;background:transparent;box-shadow:none}
+#identity-question-dna .identity-options button b,#identity-question-dna .identity-options button span,#identity-question-direction .identity-options button b,#identity-question-direction .identity-options button span{opacity:0}
+#identity-question-dna .identity-options button:hover,#identity-question-direction .identity-options button:hover{background:rgba(255,225,150,.035)}
+#identity-question-dna .identity-options button:focus-visible,#identity-question-direction .identity-options button:focus-visible{outline:3px solid #fff1bd;outline-offset:-3px}
+#identity-name,#identity-generating,#identity-card{padding:0;background-color:#030711!important;background-image:url("../images/identity-final-flow-reference-clean.png")!important;background-repeat:no-repeat!important;background-size:300% 100%!important}
+#identity-name{background-position:0 50%!important}#identity-generating{background-position:50% 50%!important}#identity-card{background-position:100% 50%!important}
+#identity-name>.identity-kicker,#identity-name>h2,#identity-name>p,#identity-generating>*{display:none!important}
+#identity-generating>.identity-tech-motion{position:absolute;inset:0;display:block!important;overflow:hidden;pointer-events:none}.identity-scan-line{position:absolute;left:10%;top:28%;width:80%;height:2px;opacity:.1;background:linear-gradient(90deg,transparent,rgba(255,214,119,.85),transparent);filter:blur(.4px);box-shadow:0 0 15px rgba(255,202,88,.38);animation:identity-scan 2s ease-in-out infinite}.identity-core-glow{position:absolute;left:50%;top:52%;width:36%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,225,153,.22),rgba(255,190,64,.07) 42%,transparent 72%);mix-blend-mode:screen;animation:identity-pulse 1.8s ease-in-out infinite}.identity-orbit-line{position:absolute;left:50%;top:54%;width:62%;height:20%;border:1px solid rgba(255,216,129,.16);border-radius:50%;transform:translate(-50%,-50%) rotate(-8deg);box-shadow:0 0 15px rgba(255,202,88,.08);animation:identity-orbit-drift 4.5s ease-in-out infinite}.identity-orbit-line:after{content:"";position:absolute;top:46%;left:-3px;width:6px;height:6px;border-radius:50%;background:#ffe19a;box-shadow:0 0 12px #ffc957}.identity-data-progress{position:absolute;left:25%;bottom:10.8%;width:50%;height:2px;overflow:hidden;border-radius:2px;background:rgba(255,255,255,.1)}.identity-data-progress:after{content:"";display:block;width:100%;height:100%;transform-origin:left;background:linear-gradient(90deg,rgba(255,191,61,.25),#ffe4a0);box-shadow:0 0 9px #ffc85e;animation:identity-progress 1.6s ease-out both}
+#identity-name-form{position:absolute!important;inset:0!important;margin:0!important}
+#identity-name .identity-name-background-mask{position:absolute;z-index:1;left:27.5%;top:70%;width:60%;height:7.2%;border-radius:18px;background:linear-gradient(100deg,#181517 0%,#171417 38%,#14121a 72%,#121019 100%);box-shadow:none;opacity:0;pointer-events:none}
+#identity-name-form:before{content:"";position:absolute;z-index:1;left:16.5%;top:70.4%;width:73.8%;height:7.6%;border-radius:22px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238d8992' stroke-width='1.6'%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3Cpath d='M4.5 21v-2.2a7.5 7.5 0 0 1 15 0V21z'/%3E%3C/svg%3E"),linear-gradient(100deg,#1d191b 0%,#1b171a 45%,#17151c 100%);background-repeat:no-repeat,no-repeat;background-position:19px 50%,0 0;background-size:22px 22px,100% 100%;box-shadow:none;pointer-events:none}
+#identity-name #identity-name-input{position:absolute;z-index:2;left:15.5%;top:69.5%;width:75%;height:8.2%;margin:0;padding:0 54px;border:0;border-radius:24px;outline:0;color:#fff5df;background:transparent;box-shadow:none;font-size:16px}
+#identity-name #identity-name-input::placeholder{color:#a9a4ad}
+#identity-name #identity-error{position:absolute;left:16%;right:16%;top:77.8%;min-height:0;margin:0;color:#ffb3a9;text-align:center;font-size:10px}
+#identity-name-form .identity-primary{position:absolute;left:15.5%;top:79.5%;width:75%;height:7.2%;min-height:0;margin:0;border:0;border-radius:999px;color:transparent;background:transparent;box-shadow:none}
+#identity-name-form .identity-primary:hover{background:rgba(255,231,170,.05)}#identity-name-form .identity-primary:focus-visible{outline:3px solid #fff1bd;outline-offset:2px}
+#identity-card>.identity-kicker,#identity-card>h2{display:none!important}
+#identity-card #identity-card-canvas{position:absolute;left:5.5%;top:14.2%;width:86%;height:55.6%;max-height:none;margin:0;border:1px solid rgba(255,216,122,.75);border-radius:14px;box-shadow:0 0 26px rgba(255,188,71,.22)}
+#identity-card .identity-card-actions{position:absolute;inset:0;margin:0;display:block}
+#identity-card .identity-card-actions button{position:absolute;left:11%;width:78%;min-height:0;margin:0;border:0;border-radius:999px;color:transparent;background:transparent;box-shadow:none;text-decoration:none}
+#identity-card #identity-download{top:73.7%;height:7.4%}#identity-card #identity-enter-galaxy{top:81.8%;height:7.4%}#identity-card #identity-restart{z-index:2;top:89.5%;height:10.2%;cursor:pointer;touch-action:manipulation}
+#identity-card .identity-card-actions button:hover{background:rgba(255,230,165,.045)}#identity-card .identity-card-actions button:focus-visible{outline:3px solid #fff1bd;outline-offset:2px}
+#galaxy-view[hidden],#identity-experience[hidden]{display:none}#galaxy-view:before,#galaxy-view:after{content:"";position:absolute;z-index:65;left:0;right:0;pointer-events:none}#galaxy-view:before{top:0;height:31%;background:linear-gradient(180deg,rgba(1,3,12,.78),rgba(3,6,20,.22) 58%,transparent)}#galaxy-view:after{bottom:0;height:29%;background:linear-gradient(0deg,rgba(2,3,12,.92),rgba(4,6,18,.36) 57%,transparent)}#light-point-app{z-index:70;pointer-events:none}.lp-brand{position:absolute;z-index:76;top:34px;left:25px;text-shadow:0 2px 18px #000}.lp-kicker{margin:0 0 8px;color:#e8c877;font-size:8px;letter-spacing:.27em}.lp-brand h1{position:relative;margin:0;font:700 37px/1.08 Georgia,"Songti SC",serif;color:#fff0c5;letter-spacing:.03em;text-shadow:0 0 18px rgba(255,205,101,.26),0 3px 20px #000}.lp-brand h1:after{content:"✦";position:absolute;right:-24px;top:2px;color:#ffd370;font-size:17px;text-shadow:0 0 14px #ffbf47}.lp-brand>p:not(.lp-kicker){margin:10px 0 15px;color:#eee4cf;font-size:11px;letter-spacing:.32em}.lp-brand>span{display:block;padding-top:8px;border-top:1px solid rgba(255,218,135,.58);font:13px Georgia,"Songti SC",serif;color:#f4ead5}.lp-brand strong{margin:0 3px;color:var(--gold);font-size:23px}.lp-light-link{position:absolute;z-index:72;inset:0;width:100%;height:100%;overflow:visible;opacity:0;transition:opacity .35s}.lp-light-link.is-visible{opacity:1}.lp-light-link line{stroke:#ffd77c;stroke-width:1;stroke-linecap:round;filter:drop-shadow(0 0 5px #ffc552)}.lp-my-light-card{position:absolute;z-index:78;width:196px;height:74px;padding:7px 12px 7px 8px;display:flex;align-items:center;gap:10px;border:1px solid rgba(255,220,143,.85);border-radius:15px;color:#fff2cf;background:linear-gradient(120deg,rgba(42,30,26,.94),rgba(8,11,29,.91));box-shadow:0 0 22px rgba(255,179,54,.24),inset 0 0 20px rgba(255,204,97,.08);backdrop-filter:blur(11px);transform:translate(-50%,-100%);transition:opacity .2s;pointer-events:none}.lp-my-light-card[hidden]{display:none}.lp-my-light-card.is-offscreen,.lp-my-light-label.is-offscreen{opacity:0}.lp-my-light-card img{width:57px;height:57px;flex:none;border-radius:12px;object-fit:cover;object-position:center;background:#171226}.lp-my-light-card strong{display:block;margin-bottom:5px;font:700 22px Georgia,"Songti SC",serif;white-space:nowrap}.lp-my-light-card span{display:block;color:#e6d5b3;font-size:10px;white-space:nowrap}.lp-my-light-card b{font-weight:500}.lp-my-light-label{position:absolute;z-index:77;padding:4px 9px;border:1px solid rgba(255,211,117,.55);border-radius:999px;color:#ffe2a0;background:rgba(33,23,20,.86);box-shadow:0 0 12px rgba(255,190,65,.2);font-size:9px;transform:translate(-50%,0);transition:opacity .2s}.lp-my-light-label[hidden]{display:none}.lp-gesture-hint{position:absolute;z-index:77;left:50%;bottom:112px;width:max-content;max-width:92%;padding:7px 12px;border-top:1px solid rgba(255,220,143,.3);border-bottom:1px solid rgba(255,220,143,.18);color:#f3e7cd;background:rgba(2,4,14,.22);font:11px Georgia,"Songti SC",serif;letter-spacing:.08em;text-shadow:0 1px 7px #000;transform:translateX(-50%)}.lp-gesture-hint span{display:inline-block;margin-right:6px;color:#fff;font:17px sans-serif;animation:gesture-nudge 1.8s ease-in-out infinite}.lp-actions{position:absolute;z-index:78;left:16px;right:16px;bottom:max(15px,env(safe-area-inset-bottom));display:grid;grid-template-columns:1.05fr .95fr;gap:9px;pointer-events:auto}.lp-primary,.lp-secondary{min-height:58px;border-radius:999px;font:700 14px inherit;cursor:pointer;backdrop-filter:blur(10px)}.lp-primary{border:1px solid #fff0bd;color:#2d1d08;background:linear-gradient(115deg,#ffeaa1,#ffc753 65%,#ffe49a);box-shadow:0 0 25px rgba(255,189,63,.35),inset 0 0 13px rgba(255,255,255,.35)}.lp-secondary{border:1px solid rgba(255,227,164,.8);color:#f8ecd1;background:linear-gradient(130deg,rgba(20,22,43,.88),rgba(10,11,27,.92));box-shadow:inset 0 0 16px rgba(255,207,108,.07)}.lp-quiet{position:absolute;left:50%;bottom:-14px;border:0;color:rgba(218,214,211,.52);background:transparent;font-size:8px;text-decoration:none;transform:translateX(-50%);white-space:nowrap}.lp-detail{position:absolute;z-index:940;right:15px;top:125px;width:210px;padding:16px;border:1px solid rgba(255,221,151,.65);border-radius:16px;color:#f2f0e9;background:linear-gradient(135deg,rgba(35,26,26,.95),rgba(8,10,24,.94));box-shadow:0 20px 60px #000,0 0 20px rgba(255,190,65,.16);backdrop-filter:blur(12px)}.lp-detail[hidden],.lp-toast[hidden]{display:none}.lp-detail img{width:62px;height:62px;border-radius:14px;object-fit:cover;float:left;margin-right:12px}.lp-detail h2{margin:4px 0;font-size:20px}.lp-detail footer{margin-top:6px;color:var(--gold);font-size:11px}.lp-detail-label{margin:0 0 10px;color:var(--gold);font-size:10px}.lp-close{position:absolute;right:8px;top:6px;border:0;color:#ddd;background:transparent;font-size:22px}.lp-toast{position:absolute;z-index:980;top:40px;right:16px;left:auto;max-width:230px;padding:13px 16px;border:1px solid #f2cd76;border-radius:13px;color:#fff0c9;background:linear-gradient(115deg,rgba(63,39,24,.94),rgba(16,15,29,.94));box-shadow:0 0 25px rgba(255,183,54,.24);text-align:center;font-size:11px}#cv{touch-action:none}#title,#topbar,#beacons,#galaxystrip,#audio{display:none!important}
+#light-point-layer{position:absolute;z-index:74;inset:0;overflow:hidden;pointer-events:none}.lp-participant-label{position:absolute;padding:1px 4px;border:0;color:#dbeaff;background:transparent;font-family:Georgia,"Songti SC","Microsoft YaHei",serif;line-height:1.25;letter-spacing:.02em;white-space:nowrap;text-shadow:0 1px 3px #000,0 0 7px rgba(116,190,255,.7);transform:translate(-50%,-100%);transition:opacity .16s,font-size .2s,color .2s}.lp-participant-label[hidden]{display:none}.lp-participant-label.is-highlighted{color:#ffe5a0;background:transparent;font-weight:700;text-shadow:0 1px 3px #000,0 0 7px #ffc44e,0 0 15px #ffb72e;animation:participant-label-pulse 1s ease-in-out infinite alternate}@keyframes participant-label-pulse{from{filter:brightness(1)}to{filter:brightness(1.4)}}
+#shiguang-phone-shell #cv{transition:filter .35s ease}#shiguang-phone-shell.is-locating-mine #cv{filter:brightness(.52) saturate(.7)}#galaxy-view.is-locating-mine .lp-my-light-card,#galaxy-view.is-locating-mine .lp-light-link{opacity:0!important;transition:none!important}.lp-my-light-label.is-locating{z-index:110;color:#2b1800;background:linear-gradient(115deg,#fff2b0,#ffc84f);border-color:#fff4c8;box-shadow:0 0 18px #ffc44e,0 0 46px rgba(255,188,54,.92);font-size:13px;font-weight:800;animation:mine-label-pulse .85s ease-in-out infinite alternate}.lp-my-light-label.is-locating:before,.lp-my-light-label.is-locating:after{content:"";position:absolute;left:50%;top:-15px;width:76px;height:76px;border:2px solid rgba(255,220,111,.95);border-radius:50%;box-shadow:0 0 18px #ffc346,inset 0 0 14px rgba(255,197,65,.35);transform:translate(-50%,-50%);animation:mine-locate-ring 1.25s ease-out infinite;pointer-events:none}.lp-my-light-label.is-locating:after{width:112px;height:112px;border-width:1px;animation-delay:.38s}@keyframes mine-locate-ring{0%{opacity:.95;transform:translate(-50%,-50%) scale(.58)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.16)}}@keyframes mine-label-pulse{from{filter:brightness(1)}to{filter:brightness(1.28)}}
+.identity-secondary:disabled{cursor:wait;opacity:.5}
+@keyframes screen-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@keyframes identity-scan{0%,100%{top:30%;opacity:.08}50%{top:78%;opacity:.48}}@keyframes identity-pulse{0%,100%{opacity:.42;transform:translate(-50%,-50%) scale(.96)}50%{opacity:.78;transform:translate(-50%,-50%) scale(1.06)}}@keyframes identity-orbit-drift{0%,100%{transform:translate(-50%,-50%) rotate(-10deg)}50%{transform:translate(-50%,-50%) rotate(2deg)}}@keyframes identity-progress{from{transform:scaleX(.05);opacity:.25}to{transform:scaleX(1);opacity:1}}
+@keyframes gesture-nudge{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@media(max-width:430px){
+  html,body{width:100%;height:100%;min-height:100%;overflow:hidden}
+  body{display:block}
+  #shiguang-phone-shell{width:100vw;height:100dvh;border-radius:0;box-shadow:none}
+  #identity-experience{overflow:hidden}
+  .identity-screen{inset:0;left:0;top:0;width:100%;height:100%}
+  #identity-question-dna .identity-options,#identity-question-direction .identity-options{right:11%;left:11%}
+  #identity-name{left:0;top:0;width:100%;height:100%;overflow:hidden;padding:0;background-color:#050713!important;background-image:linear-gradient(180deg,rgba(2,4,14,.72) 0,rgba(3,5,16,.08) 22%,transparent 54%,rgba(2,3,10,.22) 72%,rgba(2,3,10,.82) 100%),url("../images/identity-name-background-v2.png")!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+  #identity-name>.identity-kicker,#identity-name>h2,#identity-name>p{position:absolute;z-index:2;right:20px;left:20px;display:block!important;margin:0;text-align:center;text-shadow:0 2px 16px rgba(0,0,0,.9)}
+  #identity-name>.identity-kicker{top:calc(env(safe-area-inset-top,0px) + 24px);color:#f3cf77;font-size:10px;letter-spacing:.28em}
+  #identity-name>h2{top:calc(env(safe-area-inset-top,0px) + 50px);color:#fff0ca;font:700 clamp(38px,12vw,54px)/1.12 Georgia,"Songti SC",serif;letter-spacing:.05em}
+  #identity-name>h2:after{content:"";display:block;width:54px;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,#f5cd72,transparent);box-shadow:0 0 10px #eeb948}
+  #identity-name>p:not(.identity-kicker){top:calc(env(safe-area-inset-top,0px) + 126px);color:#f1e6d0;font-size:clamp(16px,4.8vw,21px);letter-spacing:.16em}
+  #identity-name #identity-name-form{position:absolute!important;z-index:3;right:max(20px,env(safe-area-inset-right,0px))!important;bottom:calc(max(22px,env(safe-area-inset-bottom,0px)) + 8px)!important;left:max(20px,env(safe-area-inset-left,0px))!important;top:auto!important;height:146px!important;margin:0!important}
+  #identity-name .identity-name-background-mask{display:none}
+  #identity-name #identity-name-form:before{z-index:4;left:18px;top:17px;width:24px;height:24px;border-radius:0;background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c7c1c8' stroke-width='1.6'%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3Cpath d='M4.5 21v-2.2a7.5 7.5 0 0 1 15 0V21z'/%3E%3C/svg%3E");background-position:center;background-size:24px 24px;box-shadow:none}
+  #identity-name #identity-name-input{left:0;top:0;width:100%;height:58px;margin:0;padding:0 20px 0 56px;border:1px solid rgba(255,232,177,.58);border-radius:22px;color:#fff6e3;background:linear-gradient(110deg,rgba(29,28,39,.92),rgba(12,13,24,.9));box-shadow:0 10px 32px rgba(0,0,0,.35),inset 0 0 24px rgba(255,213,115,.05);backdrop-filter:blur(12px);font-size:17px}
+  #identity-name #identity-name-input::placeholder{color:#bbb5c0}
+  #identity-name #identity-error{left:8px;right:8px;top:60px;color:#ffd0c8;font-size:11px;text-shadow:0 1px 5px #000}
+  #identity-name #identity-name-form .identity-primary{left:0;top:78px;width:100%;height:60px;border:1px solid #fff0bd;border-radius:999px;color:#291a07;background:linear-gradient(115deg,#ffeaa6,#ffc755 64%,#ffe49b);box-shadow:0 0 26px rgba(255,190,63,.42),inset 0 0 14px rgba(255,255,255,.4);font-size:17px;letter-spacing:.05em}
+  #identity-name #identity-name-form .identity-primary span{margin-left:12px;font-size:22px;font-weight:400}
+}
+@media(max-width:350px){
+  #identity-name>h2{font-size:38px}
+  #identity-name>p:not(.identity-kicker){top:calc(env(safe-area-inset-top,0px) + 116px);font-size:15px}
+  #identity-name #identity-name-form{height:134px!important}
+  #identity-name #identity-name-input{height:54px;padding-right:16px;padding-left:50px;font-size:15px}
+  #identity-name #identity-name-form:before{top:15px}
+  #identity-name #identity-name-form .identity-primary{top:72px;height:56px;font-size:15px}
+}
+
+/* Native full-screen identity flow: preserve artwork ratio and keep every control as live DOM. */
+#identity-experience{overflow:hidden;background:#03050d}
+.identity-screen,
+#identity-welcome,#identity-question-dna,#identity-question-direction,#identity-name,#identity-generating,#identity-card{
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding:max(24px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left));
+  background-color:#03050d!important;
+  background-image:linear-gradient(90deg,rgba(2,4,12,.9) 0,rgba(3,5,15,.3) 31%,rgba(3,5,15,.18) 69%,rgba(2,4,12,.9) 100%),linear-gradient(180deg,rgba(2,4,13,.38),rgba(2,4,13,.16) 46%,rgba(2,3,10,.88)),url("../images/identity-name-background-v2.png"),url("../images/identity-name-background-v2.png")!important;
+  background-position:center,center,center,center!important;
+  background-repeat:no-repeat!important;
+  background-size:cover,cover,auto 100%,cover!important;
+}
+.identity-screen.is-active{display:flex;align-items:center}
+.identity-screen>.identity-kicker,.identity-screen>.identity-progress,.identity-screen>h1,.identity-screen>h2,.identity-screen>p{position:relative;z-index:2;width:min(100%,520px);box-sizing:border-box}
+.identity-screen>.identity-kicker,.identity-screen>.identity-progress{display:block!important;color:#f0ca72;text-align:center;text-shadow:0 2px 12px #000}
+.identity-screen>h1,.identity-screen>h2{display:block!important;color:#fff0c9;text-align:center;text-shadow:0 3px 22px #000}
+.identity-screen>p:not(.identity-kicker):not(.identity-progress){display:block!important;color:#eee5d5;text-align:center;text-shadow:0 2px 14px #000}
+
+.identity-welcome{
+  justify-content:flex-end;
+  gap:12px;
+  padding-bottom:max(30px,calc(env(safe-area-inset-bottom) + 24px));
+}
+.identity-welcome>:not(#identity-start){display:block!important}
+.identity-welcome .identity-star{position:absolute;z-index:1;top:18%;left:50%;width:auto;margin:0;font-size:clamp(46px,8vh,78px);transform:translateX(-50%);opacity:.82}
+.identity-welcome h1{margin:0;font-size:clamp(38px,6vh,64px);line-height:1.12}
+.identity-welcome>p:not(.identity-kicker){margin:0;font-size:clamp(13px,1.8vh,17px);line-height:1.72}
+.identity-welcome #identity-start{
+  position:relative;left:auto;bottom:auto;width:min(100%,460px);height:auto;min-height:58px;margin:8px auto 0;border:1px solid #fff0bd;color:#2b1c08;
+  background:linear-gradient(115deg,#ffeaa6,#ffc755 64%,#ffe49b);box-shadow:0 0 28px rgba(255,190,63,.4),inset 0 0 14px rgba(255,255,255,.42);font-size:17px;
+}
+
+/* Reference artwork already contains the welcome copy and CTA. Keep only a live, accessible click target above it. */
+#identity-welcome.identity-welcome{
+  position:absolute;
+  justify-content:initial;
+  gap:0;
+  overflow:hidden;
+  padding:0;
+  background-color:#030711!important;
+  background-image:url("../images/welcome-identity-exploration-clean.png")!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  background-size:auto 100%!important;
+}
+#identity-welcome>:not(#identity-start){display:none!important}
+#identity-welcome #identity-start{
+  position:absolute;
+  left:50%;
+  bottom:7%;
+  width:min(82vw,33.3vh);
+  height:8.5%;
+  min-height:44px;
+  margin:0;
+  padding:0;
+  transform:translateX(-50%);
+  border:0!important;
+  border-radius:999px;
+  color:transparent!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  font-size:0;
+}
+#identity-welcome #identity-start:hover{background:rgba(255,225,150,.05)!important}
+#identity-welcome #identity-start:focus-visible{outline:3px solid #fff1bd;outline-offset:3px}
+
+#identity-question-dna,#identity-question-direction{
+  justify-content:flex-start;
+  padding-top:max(34px,calc(env(safe-area-inset-top) + 26px));
+}
+#identity-question-dna>.identity-progress,#identity-question-dna>h2,#identity-question-direction>.identity-progress,#identity-question-direction>h2{display:block!important}
+#identity-question-dna>.identity-progress,#identity-question-direction>.identity-progress{margin:0 auto 14px;font-size:12px}
+#identity-question-dna>h2,#identity-question-direction>h2{margin:0 auto clamp(18px,4vh,34px);font-size:clamp(27px,4.5vh,42px);line-height:1.32}
+#identity-question-dna .identity-options,#identity-question-direction .identity-options{
+  position:relative;inset:auto;width:min(100%,520px);margin:0 auto;display:grid;box-sizing:border-box;
+}
+#identity-question-dna .identity-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#identity-question-direction .identity-options{grid-template-columns:1fr;grid-template-rows:none;gap:10px}
+#identity-question-dna .identity-options button,#identity-question-direction .identity-options button{
+  position:relative;width:100%;height:auto;min-height:0;padding:18px;border:1px solid rgba(255,224,156,.46);border-radius:20px;color:#fff2d5;
+  background:linear-gradient(135deg,rgba(44,34,35,.9),rgba(10,15,37,.9));box-shadow:0 12px 34px rgba(0,0,0,.28),inset 0 0 30px rgba(255,205,103,.04);text-align:left;backdrop-filter:blur(9px);
+}
+#identity-question-dna .identity-options button{min-height:clamp(150px,30vh,250px);padding-top:clamp(54px,11vh,90px);text-align:center}
+#identity-question-direction .identity-options button{display:flex;align-items:center;gap:16px;min-height:74px;padding:9px 18px 9px 12px}
+#identity-question-direction .identity-options b{margin-bottom:0}
+#identity-question-dna .identity-options button:before,#identity-question-direction .identity-options button:before{position:absolute;display:grid;place-items:center;color:#ffd778;text-shadow:0 0 18px rgba(255,199,76,.76)}
+#identity-question-dna .identity-options button:before{top:18px;left:50%;font-size:32px;transform:translateX(-50%)}
+#identity-question-dna .identity-options button:nth-child(1):before{content:"◎"}#identity-question-dna .identity-options button:nth-child(2):before{content:"◐"}
+#identity-question-direction .identity-options button:before{content:none}
+.direction-badge{position:relative;display:grid;place-items:center;flex:0 0 54px;width:54px;height:54px;border:1px solid rgba(255,211,105,.72);border-radius:50%;color:#ffd879;background:radial-gradient(circle at 55% 45%,rgba(55,48,66,.7),rgba(7,11,30,.92) 68%);box-shadow:inset 0 0 18px rgba(255,210,111,.05);transition:border-color .25s,box-shadow .25s,filter .25s}
+.direction-badge:before,.direction-badge:after{content:"";position:absolute;border:1px solid rgba(255,211,105,.42);border-radius:50%;pointer-events:none}.direction-badge:before{inset:5px}.direction-badge:after{inset:9px;border-color:rgba(255,211,105,.22)}
+.direction-badge svg{position:relative;z-index:1;width:34px;height:34px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,200,75,.22))}
+.direction-badge svg circle[r="1.5"]{fill:currentColor;stroke:none}
+#identity-question-direction .identity-options button:hover .direction-badge,#identity-question-direction .identity-options button.is-selected .direction-badge{border-color:#ffe59a;color:#ffe49a;filter:brightness(1.12);box-shadow:0 0 12px rgba(255,199,76,.78),0 0 28px rgba(255,177,49,.42),inset 0 0 22px rgba(255,209,101,.2)}
+#identity-question-dna .identity-options button b,#identity-question-dna .identity-options button span,#identity-question-direction .identity-options button b,#identity-question-direction .identity-options button span{opacity:1}
+#identity-question-dna .identity-options button b,#identity-question-direction .identity-options button b{color:#fff1d0}
+#identity-question-dna .identity-options button span,#identity-question-direction .identity-options button span{color:#bbb6b6}
+#identity-question-dna .identity-options button:hover,#identity-question-direction .identity-options button:hover,#identity-question-dna .identity-options button.is-selected,#identity-question-direction .identity-options button.is-selected{border-color:#ffd373;background:linear-gradient(135deg,rgba(93,61,25,.92),rgba(19,18,34,.94));box-shadow:0 0 28px rgba(255,194,72,.2)}
+
+#identity-name,#identity-generating,#identity-card{padding:max(24px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) max(22px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
+#identity-name{justify-content:flex-start;overflow:hidden}
+#identity-name>.identity-kicker,#identity-name>h2,#identity-name>p{position:relative;inset:auto;display:block!important;width:min(100%,520px);margin-left:auto;margin-right:auto}
+#identity-name>.identity-kicker{margin-top:0;font-size:11px}
+#identity-name>h2{margin-top:14px;margin-bottom:0;font-size:clamp(40px,7vh,64px);line-height:1.12}
+#identity-name>h2:after{content:"";display:block;width:58px;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,#f5cd72,transparent);box-shadow:0 0 10px #eeb948}
+#identity-name>p:not(.identity-kicker){top:auto;margin:10px auto 0;font-size:clamp(15px,2.3vh,20px);letter-spacing:.14em}
+#identity-name #identity-name-form{
+  position:relative!important;z-index:3;inset:auto!important;width:min(100%,520px)!important;height:auto!important;margin:auto auto 0!important;padding-bottom:0;box-sizing:border-box;
+}
+#identity-name .identity-name-background-mask{display:none!important}
+#identity-name #identity-name-form:before{z-index:4;left:19px;top:18px;width:24px;height:24px;border-radius:0;background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c7c1c8' stroke-width='1.6'%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3Cpath d='M4.5 21v-2.2a7.5 7.5 0 0 1 15 0V21z'/%3E%3C/svg%3E");background-position:center;background-size:24px 24px;box-shadow:none}
+#identity-name #identity-name-input{position:relative;z-index:3;left:auto;top:auto;width:100%;height:60px;margin:0;padding:0 20px 0 58px;border:1px solid rgba(255,232,177,.58);border-radius:22px;color:#fff6e3;background:linear-gradient(110deg,rgba(29,28,39,.94),rgba(12,13,24,.92));box-shadow:0 10px 32px rgba(0,0,0,.35),inset 0 0 24px rgba(255,213,115,.05);backdrop-filter:blur(12px);font-size:17px;box-sizing:border-box}
+#identity-name #identity-error{position:relative;inset:auto;min-height:18px;margin:2px 8px 0;color:#ffd0c8;text-align:center;font-size:11px;text-shadow:0 1px 5px #000}
+#identity-name #identity-name-form .identity-primary{position:relative;left:auto;top:auto;width:100%;height:60px;min-height:60px;margin:8px 0 0;border:1px solid #fff0bd;border-radius:999px;color:#291a07;background:linear-gradient(115deg,#ffeaa6,#ffc755 64%,#ffe49b);box-shadow:0 0 26px rgba(255,190,63,.42),inset 0 0 14px rgba(255,255,255,.4);font-size:17px;letter-spacing:.05em}
+
+#identity-generating{display:none;justify-content:center;text-align:center}
+#identity-generating.is-active{display:flex}
+#identity-generating>*{display:block!important}
+#identity-generating>.identity-orbit{display:block!important;flex:none;width:clamp(120px,21vh,190px);height:clamp(120px,21vh,190px)}
+#identity-generating>h2{margin:32px auto 8px;font-size:clamp(26px,4vh,42px)}
+#identity-generating>p{margin:0 auto;font-size:clamp(14px,2vh,18px)}
+#identity-generating>.identity-tech-motion{z-index:1}
+
+#identity-card{justify-content:flex-start;overflow-y:auto;text-align:center}
+#identity-card>.identity-kicker,#identity-card>h2{display:block!important}
+#identity-card>.identity-kicker{margin:0 auto 6px;font-size:10px}
+#identity-card>h2{margin:0 auto 12px;font-size:clamp(23px,3.4vh,34px)}
+#identity-card #identity-card-canvas{
+  position:relative;left:auto;top:auto;flex:none;width:min(82vw,46vh,430px);height:auto;max-height:none;margin:0 auto;border:1px solid rgba(255,216,122,.75);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.72),0 0 24px rgba(255,188,71,.18)
+}
+#identity-card .identity-card-actions{position:relative;inset:auto;width:min(100%,520px);margin:14px auto 0;display:grid;gap:9px}
+#identity-card .identity-card-actions button{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:50px;margin:0;border-radius:999px;color:inherit;text-decoration:none;cursor:pointer}
+#identity-card #identity-download{order:1;height:auto;border:1px solid #fff0bd;color:#291a07;background:linear-gradient(115deg,#ffeaa6,#ffc755 64%,#ffe49b);box-shadow:0 0 22px rgba(255,190,63,.28)}
+#identity-card #identity-enter-galaxy{order:2;height:auto;border:1px solid rgba(255,227,164,.75);color:#f8ecd1;background:linear-gradient(130deg,rgba(20,22,43,.9),rgba(10,11,27,.94));box-shadow:inset 0 0 16px rgba(255,207,108,.07)}
+#identity-card #identity-restart{order:3;z-index:auto;height:auto;min-height:34px;color:#b9b5bc;background:transparent;text-decoration:none}
+
+@media(max-width:600px){
+  .identity-screen,#identity-welcome,#identity-question-dna,#identity-question-direction,#identity-name,#identity-generating,#identity-card{background-size:cover,cover,cover,cover!important}
+  .identity-welcome{gap:9px}
+  .identity-welcome h1{font-size:clamp(32px,10.4vw,44px)}
+  #identity-question-dna,#identity-question-direction{padding-top:max(22px,calc(env(safe-area-inset-top) + 18px))}
+  #identity-question-dna>.identity-progress,#identity-question-direction>.identity-progress{margin-bottom:9px}
+  #identity-question-dna>h2,#identity-question-direction>h2{margin-bottom:14px;font-size:clamp(24px,7.4vw,33px)}
+  #identity-question-dna .identity-options,#identity-question-direction .identity-options{right:auto;left:auto}
+  #identity-question-dna .identity-options button{min-height:clamp(126px,27vh,220px);padding:52px 12px 14px}
+  #identity-question-direction .identity-options{gap:7px}
+  #identity-question-direction .identity-options button{min-height:54px;padding:8px 12px 8px 62px}
+  #identity-question-direction .identity-options button:before{left:15px}
+  #identity-question-direction .identity-options b{font-size:14px;margin-bottom:2px}
+  #identity-question-direction .identity-options span{font-size:10px}
+  #identity-name{padding-top:max(20px,env(safe-area-inset-top));padding-bottom:max(20px,env(safe-area-inset-bottom))}
+  #identity-name #identity-name-form{inset:auto!important;height:auto!important}
+  #identity-card{padding-top:max(14px,env(safe-area-inset-top));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+  #identity-card #identity-card-canvas{width:min(88vw,45vh,390px)}
+  #identity-card .identity-card-actions{margin-top:10px;gap:6px}
+  #identity-card .identity-card-actions button{min-height:46px}
+  #identity-card #identity-restart{min-height:30px}
+}
+@media(max-height:640px){
+  .identity-welcome .identity-star{display:none!important}
+  .identity-welcome>p:not(.identity-kicker){font-size:12px}
+  #identity-question-dna .identity-options button{min-height:124px}
+  #identity-question-direction .identity-options button{min-height:54px}
+  #identity-name>h2{font-size:38px;margin-top:8px}
+  #identity-name>p:not(.identity-kicker){margin-top:8px}
+  #identity-name #identity-name-input{height:54px}
+  #identity-name #identity-name-form:before{top:15px}
+  #identity-name #identity-name-form .identity-primary{height:54px;min-height:54px;margin-top:5px}
+  #identity-card>.identity-kicker{display:none!important}
+  #identity-card>h2{margin-bottom:7px;font-size:21px}
+  #identity-card #identity-card-canvas{width:min(80vw,40vh,330px)}
+  #identity-card .identity-card-actions{margin-top:7px;gap:4px}
+  #identity-card .identity-card-actions button{min-height:42px}
+}
+
+/* Creation DNA: illustrated twin-card layout based on the approved mobile reference. */
+#identity-question-dna{background-image:linear-gradient(180deg,rgba(2,5,18,.2),rgba(2,4,14,.32) 58%,rgba(2,3,11,.76)),url("../images/identity-name-background-v2.png")!important;background-size:cover!important;background-position:center!important}
+#identity-question-dna>.identity-progress{position:relative;margin-bottom:16px;padding-top:10px;font:600 18px/1.2 Georgia,"Songti SC",serif;letter-spacing:.12em}
+#identity-question-dna>.identity-progress:before{content:"✦";display:inline-block;margin-right:18px;color:#ffe190;text-shadow:0 0 13px #ffc24f}
+#identity-question-dna>.identity-progress:after{content:"•";display:inline-block;margin-left:18px;color:#8e96b1}
+#identity-question-dna>h2{margin-bottom:22px;font:700 clamp(25px,4vh,38px)/1.42 Georgia,"Songti SC",serif;letter-spacing:.04em}
+#identity-question-dna>h2:after{content:"";display:block;width:40px;height:1px;margin:17px auto 0;background:linear-gradient(90deg,transparent,#fff1ca,transparent)}
+#identity-question-dna .identity-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+#identity-question-dna .identity-options button{isolation:isolate;overflow:hidden;min-height:clamp(360px,57vh,590px);padding:0;border:1px solid rgba(226,230,255,.56);border-radius:20px;background:#080d21;box-shadow:0 18px 40px rgba(0,0,0,.5),inset 0 0 24px rgba(255,255,255,.04);text-align:center;backdrop-filter:none}
+#identity-question-dna .identity-options button:before{content:none}
+#identity-question-dna .dna-card-art{position:absolute;z-index:-2;inset:0;display:block;opacity:1;background-position:center top;background-size:cover;background-repeat:no-repeat;transition:transform .45s ease,filter .3s ease}
+#identity-question-dna .dna-card-art-a{background-image:url("../images/question-cards/dna-chaos-papers.png")}
+#identity-question-dna .dna-card-art-b{background-image:url("../images/question-cards/dna-empty-bulb.png")}
+#identity-question-dna .identity-options button:after{content:"";position:absolute;z-index:-1;inset:55% 0 0;background:linear-gradient(180deg,transparent,rgba(6,8,22,.72) 24%,rgba(9,8,18,.96) 72%);pointer-events:none}
+#identity-question-dna .identity-options button b{position:absolute;z-index:2;right:8px;bottom:23px;left:8px;margin:0;color:#fff2d0;font:700 clamp(17px,2.5vh,23px)/1.5 Georgia,"Songti SC",serif;letter-spacing:.04em;text-shadow:0 2px 12px #000}
+#identity-question-dna .identity-options button b:before{content:"◎";display:block;margin:0 auto 8px;color:#ffe098;font-size:17px;text-shadow:0 0 13px #ffbd47}
+#identity-question-dna .identity-options button:nth-child(2) b:before{content:"◐"}
+#identity-question-dna .identity-options button>span:not(.dna-card-art){display:none}
+#identity-question-dna .identity-options button:hover,#identity-question-dna .identity-options button.is-selected{border-color:#ffe39a;background:#080d21;box-shadow:0 0 19px rgba(255,191,68,.55),0 18px 40px rgba(0,0,0,.52),inset 0 0 22px rgba(255,213,111,.2)}
+#identity-question-dna .identity-options button:hover .dna-card-art,#identity-question-dna .identity-options button.is-selected .dna-card-art{transform:scale(1.035);filter:brightness(1.08) saturate(1.06)}
+@media(max-width:600px){
+  #identity-question-dna{padding:calc(max(18px,env(safe-area-inset-top)) + 4px) 17px max(18px,env(safe-area-inset-bottom))}
+  #identity-question-dna>.identity-progress{margin-bottom:13px;padding-top:0;font-size:17px}
+  #identity-question-dna>h2{margin-bottom:18px;font-size:clamp(24px,7.1vw,31px)}
+  #identity-question-dna .identity-options{right:auto;left:auto;gap:12px}
+  #identity-question-dna .identity-options button{min-height:clamp(390px,58vh,560px);padding:0}
+  #identity-question-dna .identity-options button b{bottom:18px;font-size:clamp(17px,4.8vw,21px)}
+}
+@media(max-height:720px){#identity-question-dna .identity-options button{min-height:360px}#identity-question-dna>h2{margin-bottom:13px;font-size:24px}#identity-question-dna>.identity-progress{margin-bottom:10px}}
+
+/* Direction: five illustrated glass cards based on the approved mobile reference. */
+#identity-question-direction{background-image:linear-gradient(180deg,rgba(2,5,18,.14),rgba(2,4,14,.28) 60%,rgba(2,3,11,.7)),url("../images/identity-name-background-v2.png")!important;background-size:cover!important;background-position:center!important}
+#identity-question-direction>.identity-progress{margin-bottom:13px;padding-top:7px;font:600 18px/1.2 Georgia,"Songti SC",serif;letter-spacing:.12em}
+#identity-question-direction>.identity-progress:before{content:"✦";display:inline-block;margin-right:18px;color:#ffe190;text-shadow:0 0 13px #ffc24f}
+#identity-question-direction>.identity-progress:after{content:"✦";display:inline-block;margin-left:18px;color:#ffe190;text-shadow:0 0 13px #ffc24f}
+#identity-question-direction>h2{margin-bottom:17px;font:700 clamp(25px,4vh,38px)/1.42 Georgia,"Songti SC",serif;letter-spacing:.04em}
+#identity-question-direction>h2:after{content:"";display:block;width:40px;height:1px;margin:15px auto 0;background:linear-gradient(90deg,transparent,#fff1ca,transparent)}
+#identity-question-direction .identity-options{gap:9px}
+#identity-question-direction .identity-options button{display:grid;grid-template-columns:minmax(126px,42%) 1fr 40px;align-items:center;gap:0;overflow:hidden;min-height:clamp(82px,11.6vh,112px);padding:0;border:1px solid rgba(231,223,255,.62);border-radius:18px;background:linear-gradient(100deg,rgba(10,12,30,.38),rgba(18,15,31,.9) 56%,rgba(23,17,31,.94));box-shadow:0 10px 26px rgba(0,0,0,.38),inset 0 0 26px rgba(255,222,155,.04);backdrop-filter:blur(9px);text-align:left}
+#identity-question-direction .direction-card-art{align-self:stretch;display:block;min-width:0;background-position:center;background-repeat:no-repeat;background-size:cover;box-shadow:inset -24px 0 28px rgba(9,10,27,.5);transition:transform .35s ease,filter .3s ease}
+#identity-question-direction .direction-card-art-a{background-image:url("../images/question-cards/direction-storybook.png")}
+#identity-question-direction .direction-card-art-b{background-image:url("../images/question-cards/direction-heart-target.png")}
+#identity-question-direction .direction-card-art-c{background-image:url("../images/question-cards/direction-connected-world.png");background-position:31% center}
+#identity-question-direction .direction-card-art-d{background-image:url("../images/question-cards/direction-code-space.png")}
+#identity-question-direction .direction-card-art-e{background-image:url("../images/question-cards/direction-color-dream.png")}
+#identity-question-direction .identity-options b{position:relative;z-index:1;margin:0;padding:0 10px 0 13px;color:#fff1d0;font:700 clamp(15px,2.25vh,20px)/1.48 Georgia,"Songti SC",serif;letter-spacing:.04em;text-shadow:0 2px 12px #000}
+#identity-question-direction .direction-card-arrow{display:grid;place-items:center;width:31px;height:31px;border:1px solid rgba(255,236,198,.72);border-radius:50%;color:#fff0cf;font:300 26px/1 sans-serif;background:rgba(34,29,43,.62);box-shadow:0 0 12px rgba(255,207,111,.08)}
+#identity-question-direction .identity-options button:hover,#identity-question-direction .identity-options button.is-selected{border-color:#ffe39a;background:linear-gradient(100deg,rgba(31,24,36,.5),rgba(54,37,35,.9));box-shadow:0 0 17px rgba(255,192,69,.45),0 10px 28px rgba(0,0,0,.42),inset 0 0 20px rgba(255,216,122,.12)}
+#identity-question-direction .identity-options button:hover .direction-card-art,#identity-question-direction .identity-options button.is-selected .direction-card-art{transform:scale(1.035);filter:brightness(1.08) saturate(1.08)}
+@media(max-width:600px){
+  #identity-question-direction{padding:calc(max(16px,env(safe-area-inset-top)) + 2px) 14px max(15px,env(safe-area-inset-bottom))}
+  #identity-question-direction>.identity-progress{margin-bottom:9px;padding-top:0;font-size:17px}
+  #identity-question-direction>h2{margin-bottom:13px;font-size:clamp(23px,6.8vw,30px)}
+  #identity-question-direction .identity-options{gap:8px}
+  #identity-question-direction .identity-options button{grid-template-columns:38% 1fr 37px;min-height:clamp(83px,11.2vh,103px);padding:0}
+  #identity-question-direction .identity-options b{padding:0 7px 0 11px;font-size:clamp(14px,4vw,17px)}
+  #identity-question-direction .direction-card-arrow{width:29px;height:29px;font-size:23px}
+}
+@media(max-height:720px){#identity-question-direction>.identity-progress{margin-bottom:6px}#identity-question-direction>h2{margin-bottom:9px;font-size:23px}#identity-question-direction>h2:after{margin-top:9px}#identity-question-direction .identity-options{gap:6px}#identity-question-direction .identity-options button{min-height:76px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
