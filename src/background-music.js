@@ -86,22 +86,6 @@
   }
 
   button.addEventListener('click', toggle);
-  var preference = 'on';
-  try { preference = localStorage.getItem('gx-music') || 'on'; } catch (error) {}
-  if (preference !== 'off') {
-    var startAfterGesture = function (event) {
-      if (event && event.target && event.target.closest && event.target.closest('#audio')) return;
-      if (!player || player.paused) play(0);
-      if (player && !player.paused) {
-        ['pointerdown', 'keydown', 'touchstart'].forEach(function (type) {
-          window.removeEventListener(type, startAfterGesture);
-        });
-      }
-    };
-    ['pointerdown', 'keydown', 'touchstart'].forEach(function (type) {
-      window.addEventListener(type, startAfterGesture, { passive: true });
-    });
-  }
   paint();
 }(typeof globalThis !== 'undefined' ? globalThis : window));
 
