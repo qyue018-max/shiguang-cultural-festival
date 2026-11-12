@@ -1,21 +1,27 @@
 (function (root) {
   'use strict';
 
-  var DEFAULT_IMAGE = 'images/career-ip/light-catcher.png';
+  var DEFAULT_IMAGE = 'images/career-ip/light-catcher.webp';
   var ALLOWED_IMAGES = [
-    'images/career-ip/time-helmsman.png',
-    'images/career-ip/light-catcher.png',
-    'images/career-ip/emotion-harvester.png',
-    'images/career-ip/idea-igniter.png',
-    'images/career-ip/truth-digger.png',
-    'images/career-ip/traffic-surfer.png',
-    'images/career-ip/dimension-breaker.png',
-    'images/career-ip/interactive-lightmaker.png',
-    'images/career-ip/color-alchemist.png',
-    'images/career-ip/dream-builder.png'
+    'images/career-ip/time-helmsman.webp',
+    'images/career-ip/light-catcher.webp',
+    'images/career-ip/emotion-harvester.webp',
+    'images/career-ip/idea-igniter.webp',
+    'images/career-ip/truth-digger.webp',
+    'images/career-ip/traffic-surfer.webp',
+    'images/career-ip/dimension-breaker.webp',
+    'images/career-ip/interactive-lightmaker.webp',
+    'images/career-ip/color-alchemist.webp',
+    'images/career-ip/dream-builder.webp'
   ];
 
   function text(value) { return typeof value === 'string' ? value.trim() : ''; }
+
+  function normalizeImage(value) {
+    var image = text(value);
+    if (/^images\/career-ip\/[a-z-]+\.png$/.test(image)) image = image.slice(0, -4) + '.webp';
+    return ALLOWED_IMAGES.indexOf(image) >= 0 ? image : DEFAULT_IMAGE;
+  }
 
   function normalizeLight(raw, options) {
     if (!raw || typeof raw !== 'object') return null;
@@ -27,7 +33,7 @@
       number: number,
       name: name,
       identityKey: identityKey,
-      ipImage: ALLOWED_IMAGES.indexOf(text(raw.ipImage)) >= 0 ? text(raw.ipImage) : DEFAULT_IMAGE,
+      ipImage: normalizeImage(raw.ipImage),
       createdAt: text(raw.createdAt) || new Date().toISOString(),
       mine: Boolean(raw.mine || (mineId && id === mineId))
     };
