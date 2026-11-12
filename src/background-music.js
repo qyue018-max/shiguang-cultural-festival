@@ -10,7 +10,6 @@
   var playing = false;
 
   if (!panel || !button || !list || !tracks.length) return;
-  root.ShiguangBackgroundMusic = true;
   panel.style.display = '';
 
   tracks.forEach(function (filename, index) {
@@ -86,6 +85,7 @@
   }
 
   button.addEventListener('click', toggle);
+  root.ShiguangBackgroundMusic = { play: function () { play(0); }, toggle: toggle };
   paint();
 }(typeof globalThis !== 'undefined' ? globalThis : window));
 
