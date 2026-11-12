@@ -26,8 +26,8 @@
 
   function visualSpecFor(record) {
     return record && record.mine
-      ? { basePixels: 10, maxPixels: 16, pulse: 1 }
-      : { basePixels: 7, maxPixels: 12, pulse: 0 };
+      ? { basePixels: 8.25, maxPixels: 18.9, brightness: 1.45, pulseAmplitude: .12, pulsePeriodMs: 1800 }
+      : { basePixels: 7, maxPixels: 16, brightness: 1, pulseAmplitude: 0, pulsePeriodMs: 0 };
   }
 
   function personalStatusFor(records) {

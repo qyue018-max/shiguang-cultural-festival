@@ -5418,12 +5418,13 @@
     linkGalaxyChildren();
   })();
 
+  if (!window.ShiguangBackgroundMusic) {
   // ── background music (speaker button / M, autoplays on load): local mp3s in ./audio/,
   // listed by FILE NAME. The speaker toggles play/mute; a hover popup picks the
   // track. Playback starts only on a user gesture (autoplay policy). To add music,
   // drop .mp3 files in ./audio/ and list their file names here. Empty → the speaker
   // button is hidden.
-  var MUSIC_TRACKS = [];
+  var MUSIC_TRACKS = ['追梦的人慢版.mp3'];
   var musicEl = null, musicTrack = -1, musicOn = false;
   var audioBtn = document.getElementById('audiobtn'), audioList = document.getElementById('audiolist');
   if (!MUSIC_TRACKS.length) document.getElementById('audio').style.display = 'none';
@@ -5473,6 +5474,7 @@
     ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) { window.addEventListener(ev, kickMusic, { passive: true }); });
   }
 
+  }
   // ── ?fx=1 — demo mode: force one ambient event every 4s (meteor → shower → nova,
   // round-robin) so you can see each effect without waiting for the real schedule.
   // e.g. index.html?fx=1
