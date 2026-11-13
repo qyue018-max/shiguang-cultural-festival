@@ -11,7 +11,7 @@
     'vendor/RenderPass.js',
     'vendor/ShaderPass.js',
     'vendor/UnrealBloomPass.js',
-    'src/galaxy-runtime.js?v=original-galaxy-20261113'
+    'src/galaxy-runtime.js?v=restored-full-20261113'
   ];
 
   function loadScript(source) {

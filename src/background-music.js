@@ -43,7 +43,7 @@
       player = new Audio();
       player.preload = 'none';
       player.loop = true;
-      player.volume = 0.35;
+      player.volume = 0.4;
     }
     if (trackIndex !== index) {
       trackIndex = index;
