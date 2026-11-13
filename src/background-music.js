@@ -87,5 +87,19 @@
   button.addEventListener('click', toggle);
   root.ShiguangBackgroundMusic = { play: function () { play(0); }, toggle: toggle };
   paint();
+
+  // Try immediately. Mobile browsers may reject audible autoplay until the
+  // first user gesture, so that gesture transparently retries playback.
+  var gestureTarget = typeof window !== 'undefined' ? window : root;
+  function retryOnFirstGesture() {
+    if (!playing) play(0);
+    ['pointerdown', 'touchstart', 'keydown'].forEach(function (type) {
+      gestureTarget.removeEventListener(type, retryOnFirstGesture);
+    });
+  }
+  ['pointerdown', 'touchstart', 'keydown'].forEach(function (type) {
+    gestureTarget.addEventListener(type, retryOnFirstGesture, { passive: true });
+  });
+  play(0);
 }(typeof globalThis !== 'undefined' ? globalThis : window));
 
