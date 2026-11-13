@@ -11,7 +11,7 @@
     'vendor/RenderPass.js',
     'vendor/ShaderPass.js',
     'vendor/UnrealBloomPass.js',
-    'src/galaxy-runtime.js'
+    'src/galaxy-runtime.js?v=mobile-lite-20261113'
   ];
 
   function loadScript(source) {
@@ -39,7 +39,7 @@
       return chain.then(function () { return loadScript(source); });
     }, Promise.resolve()).then(function () {
       if (!root.__shiguangGalaxyRuntimeReady || !root.THREE || !root.galaxyRoot || !root.camera) {
-        var runtimeScript = document.querySelector('script[data-galaxy-source="src/galaxy-runtime.js"]');
+        var runtimeScript = document.querySelector('script[data-galaxy-source^="src/galaxy-runtime.js"]');
         if (runtimeScript) runtimeScript.remove();
         throw new Error('3D 星河初始化失败');
       }

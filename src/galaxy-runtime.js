@@ -6,6 +6,7 @@ Total output lines: 5546
   var videoParams = new URLSearchParams(location.search);
   // ?video=1 is for the local capture rig only — on a public host it is ignored (the capture runtime is not part of this repo; it is injected only at render time)
   var videoMode = videoParams.get('video') === '1' && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  var MOBILE_GALAXY = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches) || window.innerWidth <= 640;
   function videoParamInt(name, fallback, max) {
     var value = Number(videoParams.get(name));
     return Number.isSafeInteger(value) && value > 0 && value <= max ? value : fallback;
@@ -49,7 +50,7 @@ Total output lines: 5546
   // GALAXY_SPIN: radians/sec the whole galaxy rotates about its axis.
   var BLOOM = { strength: 0.08, radius: 0.32, threshold: 0.42 };
   var TONE = { exposure: 1.1 };
-  var DUST = { count: 30000, min: 1500, radius: 360, arms: 4, minorDim: 0.42, tight: 0.85, armWidth: 46, randomness: 0.5, thickness: 24, radPow: 0.72, size: 4.0, brightness: 0.5, inside: 0xffcf8a, outside: 0x86acec, hii: 0xff5fa8, blueStar: 0xcfe6ff };
+  var DUST = { count: MOBILE_GALAXY ? 12000 : 30000, min: 1500, radius: 360, arms: 4, minorDim: 0.42, tight: 0.85, armWidth: 46, randomness: 0.5, thickness: 24, radPow: 0.72, size: 4.0, brightness: 0.5, inside: 0xffcf8a, outside: 0x86acec, hii: 0xff5fa8, blueStar: 0xcfe6ff };
   var GALAXY_SPIN = 0.013;
 
   function setMsg(t) { var el = document.getElementById('msg'); if (el) el.textContent = t || ''; }
@@ -105,7 +106,7 @@ Total output lines: 5546
     clearTimeout(glLostTimer); glLostTimer = setTimeout(function () { setMsg(m[1]); }, 4000);
   });
   cv.addEventListener('webglcontextrestored', function () { clearTimeout(glLostTimer); setMsg(''); }); // three re-uploads textures/buffers on the next frame; render-target bakes redo themselves (bakeNebula)
-  renderer.setPixelRatio(videoMode ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(videoMode ? 1 : (MOBILE_GALAXY ? 1 : Math.min(window.devicePixelRatio || 1, 2)));
   renderer.setSize(outputWidth, outputHeight);
   renderer.toneMapping = THREE.NoToneMapping; // tone-mapped AFTER bloom via a final ACES pass instead
   var scene = new THREE.Scene();
@@ -383,6 +384,7 @@ Total output lines: 5546
   // bloom composer (defensive: fall back to plain rendering if any global is missing)
   var composer = null;
   try {
+    if (MOBILE_GALAXY) throw new Error('mobile direct renderer');
     composer = new THREE.EffectComposer(renderer);
     if (renderer.capabilities.isWebGL2 && renderer.extensions.has('EXT_color_buffer_float')) composer.renderTarget1.texture.type = composer.renderTarget2.texture.type = THREE.HalfFloatType; // HDR scene buffer: an 8-bit one clipped at 1.0 before bloom + ACES and banded the dark core halo into rings
     composer.addPass(new THREE.RenderPass(scene, camera));
@@ -555,7 +557,7 @@ Total output lines: 5546
       '  float inten = dens * uBright * 0.62 + core * (0.25 + 0.75 * strands) * uBright * 0.85;' +
       '  gl_FragColor = vec4(col * inten, 1.0);' +
       '}';
-    var size = touch ? 2048 : 4096, tiles = size / (touch ? 256 : 512); // full-res bake in tiles, one per frame
+    var size = touch ? 1024 : 4096, tiles = size / (touch ? 256 : 512); // mobile keeps GPU memory low enough for embedded browsers
     var half = renderer.capabilities.isWebGL2 && renderer.extensions.has('EXT_color_buffer_float');
     function makeRT(n) { return new THREE.WebGLRenderTarget(n, n, { depthBuffer: false, format: THREE.RGBAFormat, type: half ? THREE.HalfFloatType : THREE.UnsignedByteType, minFilter: THREE.LinearMipmapLinearFilter, magFilter: THREE.LinearFilter, generateMipmaps: true }); }
     var span = R * 2.5, geo = new THREE.PlaneGeometry(span, span, 1, 1);
@@ -566,7 +568,7 @@ Total output lines: 5546
     });
     var bakeScene = new THREE.Scene(); bakeScene.add(new THREE.Mesh(geo, bakeMat));
     var bakeCam = new THREE.OrthographicCamera(-span / 2, span / 2, span / 2, -span / 2, 0.1, 10); bakeCam.position.z = 1; bakeCam.lookAt(0, 0, 0);
-    var preview = makeRT(1024), full = makeRT(size), mapU = { value: preview.texture };
+    var preview = makeRT(touch ? 512 : 1024), full = makeRT(size), mapU = { value: preview.texture };
     paintFinish({ rt: preview, scene: bakeScene, cam: bakeCam, grid: 1, next: 0, done: function () {} }); // ~1/16 of the full cost: the disc is there on the first frame
     function finish() { mapU.value = full.texture; if (preview) { preview.dispose(); preview = null; } }
     var job = { rt: full, scene: bakeScene, cam: bakeCam, grid: tiles, next: 0, done: finish };
@@ -2553,7 +2555,7 @@ Total output lines: 5546
     var EXT_DISPLAY_FRAG = 'uniform sampler2D uMap; uniform float uGain; uniform float uFade; uniform vec3 uNear; varying vec2 vUv; varying float vDepth;' +
       'void main(){ vec3 c = texture2D(uMap, vUv).rgb; c *= c; gl_FragColor = vec4(c * mix(uNear.z, 1.0, smoothstep(uNear.x, uNear.y, vDepth)) * uGain * uFade, 1.0); }';
     function paintGalaxy(L, sp, R, plate, plateSpan) { // bake one painting and mount it under the galaxy's stars (plate: the 256² canvas of its photo)
-      var touch = paintedGalaxy.touch, size = sp.size ? (touch ? sp.size / 2 : sp.size) : (touch ? 1024 : 2048), kind = sp.kind || 0;
+      var touch = paintedGalaxy.touch, size = sp.size ? (touch ? Math.max(256, sp.size / 4) : sp.size) : (touch ? 512 : 2048), kind = sp.kind || 0;
       var span = kind === 2 ? plateSpan : R * (sp.span || 2.5);
       function lin(h) { return new THREE.Color(h).convertSRGBToLinear(); }
       function v4(a, d) { a = a || d; return new THREE.Vector4(a[0], a[1], a[2] || 0, a[3] || 0); }
