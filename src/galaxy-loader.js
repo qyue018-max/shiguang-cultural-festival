@@ -11,7 +11,7 @@
     'vendor/RenderPass.js',
     'vendor/ShaderPass.js',
     'vendor/UnrealBloomPass.js',
-    'src/galaxy-runtime.js?v=mobile-lite-20261113'
+    'src/galaxy-runtime.js?v=original-galaxy-20261113'
   ];
 
   function loadScript(source) {
@@ -31,12 +31,16 @@
     return script.__loadPromise;
   }
 
+  function loadScriptWithRetry(source) {
+    return loadScript(source).catch(function () { return loadScript(source); });
+  }
+
   function load() {
     if (root.__shiguangGalaxyRuntimeReady && root.THREE && root.galaxyRoot && root.camera) return Promise.resolve();
     if (runtimePromise) return runtimePromise;
     root.__shiguangGalaxyRuntimeReady = false;
     runtimePromise = scripts.reduce(function (chain, source) {
-      return chain.then(function () { return loadScript(source); });
+      return chain.then(function () { return loadScriptWithRetry(source); });
     }, Promise.resolve()).then(function () {
       if (!root.__shiguangGalaxyRuntimeReady || !root.THREE || !root.galaxyRoot || !root.camera) {
         var runtimeScript = document.querySelector('script[data-galaxy-source^="src/galaxy-runtime.js"]');
